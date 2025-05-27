@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "D2fJGnFpqbndWyHm85LK3Uk17J5pn0Dw6xq5/7+Y1uQ=",
+  "Source": "Auction.UserAuthService",
+  "BasePath": "_content/Auction.UserAuthService",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

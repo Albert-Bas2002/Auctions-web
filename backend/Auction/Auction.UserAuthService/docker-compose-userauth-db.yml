@@ -1,0 +1,20 @@
+
+services:
+  postgres-userauth:
+    image: postgres:latest
+    container_name: UserRolePermissionContainer
+    environment:
+      POSTGRES_DB: "UserRolePermissionDb"
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "1111"
+    ports:
+      - "5430:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - microservices-net  
+volumes:
+  postgres_data:
+networks:
+  microservices-net:
+    external: true

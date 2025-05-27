@@ -1,0 +1,15 @@
+services:
+  hub-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: hub-service
+    ports:
+      - "5005:8085"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    networks:
+      - microservices-net
+networks:
+  microservices-net:
+    external: true

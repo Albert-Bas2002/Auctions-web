@@ -1,0 +1,20 @@
+
+services:
+  postgres-auction:
+    image: postgres:latest
+    container_name: AuctionContainer
+    environment:
+      POSTGRES_DB: "AuctionDb"
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "1111"
+    ports:
+      - "5431:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - microservices-net  
+volumes:
+  postgres_data:
+networks:
+  microservices-net:
+    external: true

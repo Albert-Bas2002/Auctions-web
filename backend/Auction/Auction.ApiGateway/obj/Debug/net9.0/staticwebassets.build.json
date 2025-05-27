@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "3LuExSZcRXjppfYcsv1Ni3seUyYSlxcJwEKCwvU5Fys=",
+  "Source": "Auction.ApiGateway",
+  "BasePath": "_content/Auction.ApiGateway",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

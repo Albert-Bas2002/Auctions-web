@@ -1,0 +1,20 @@
+
+services:
+    postgres-chat:
+        image: postgres:latest
+        container_name: AuctionChatContainer
+        environment:
+          POSTGRES_DB: "AuctionChatDb"
+          POSTGRES_USER: "postgres"
+          POSTGRES_PASSWORD: "1111"
+        ports:
+          - "5435:5432"
+        volumes:
+          - postgres_data:/var/lib/postgresql/data
+        networks:
+          - microservices-net
+volumes:
+  postgres_data:
+networks:
+  microservices-net:
+    external: true

@@ -1,0 +1,15 @@
+services:
+  api-gateway-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: api-gateway-service
+    ports:
+      - "5003:8083"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    networks:
+      - microservices-net
+networks:
+  microservices-net:
+    external: true

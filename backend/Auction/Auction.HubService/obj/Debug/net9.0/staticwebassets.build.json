@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "oV8Z+MdcnTFuft8hPDdXjfTwTYI0Zb04uKfRXsm4a0o=",
+  "Source": "Auction.HubService",
+  "BasePath": "_content/Auction.HubService",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
