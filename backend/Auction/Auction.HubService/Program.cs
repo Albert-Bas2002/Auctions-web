@@ -7,6 +7,7 @@ using Auction.HubService.Data.Repositories;
 using Auction.HubService.Extensions;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -18,7 +19,8 @@ builder.Logging.AddConsole();
 builder.Services.AddSignalR();
 builder.Services.AddScoped<IAuctionHubService, AuctionHubService>();
 builder.Services.AddScoped<IAuctionChatMessageRepository, AuctionChatMessageRepository>();
-builder.Services.AddDbContext<AuctionChatDbContext>();
+builder.Services.AddDbContext<AuctionChatDbContext>(options =>
+    options.UseNpgsql(builder.Configuration.GetConnectionString("AuctionChatDbContext")));
 
 builder.Services.AddApiAuthentication(
     builder.Services.BuildServiceProvider().GetRequiredService<IOptions<JwtOptions>>());//bad

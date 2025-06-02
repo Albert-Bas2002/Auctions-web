@@ -148,3 +148,5 @@ D:\Auction\backend\Auction\Auction.UserAuthService\obj\Debug\net8.0\refint\Aucti
 D:\Auction\backend\Auction\Auction.UserAuthService\obj\Debug\net8.0\Auction.UserAuthService.pdb
 D:\Auction\backend\Auction\Auction.UserAuthService\obj\Debug\net8.0\Auction.UserAuthService.genruntimeconfig.cache
 D:\Auction\backend\Auction\Auction.UserAuthService\obj\Debug\net8.0\ref\Auction.UserAuthService.dll
+D:\Auction\backend\Auction\Auction.UserAuthService\obj\Debug\net8.0\Auction.UserAuthService.sourcelink.json
+D:\Auction\backend\Auction\Auction.UserAuthService\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

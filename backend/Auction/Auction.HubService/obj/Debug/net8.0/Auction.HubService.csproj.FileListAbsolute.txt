@@ -150,3 +150,4 @@ D:\Auction\backend\Auction\Auction.HubService\obj\Debug\net8.0\Auction.HubServic
 D:\Auction\backend\Auction\Auction.HubService\obj\Debug\net8.0\Auction.HubService.genruntimeconfig.cache
 D:\Auction\backend\Auction\Auction.HubService\obj\Debug\net8.0\ref\Auction.HubService.dll
 D:\Auction\backend\Auction\Auction.HubService\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+D:\Auction\backend\Auction\Auction.HubService\obj\Debug\net8.0\Auction.HubService.sourcelink.json

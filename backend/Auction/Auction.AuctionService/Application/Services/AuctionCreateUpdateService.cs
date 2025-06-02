@@ -27,9 +27,9 @@ namespace Auction.AuctionService.Application.Services
                 description,
                 reserve);
 
-            var auctionResult = AuctionStatus.Create(AuctionId);
+            var auctionStatus = AuctionStatus.Create(AuctionId);
             await _auctionDetailsRepository.Add(auctionDetails);
-            await _auctionStatusRepository.Add(auctionResult);
+            await _auctionStatusRepository.Add(auctionStatus);
 
 
         }

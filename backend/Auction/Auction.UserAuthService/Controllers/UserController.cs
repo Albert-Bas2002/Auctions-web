@@ -145,7 +145,7 @@ namespace Auction.ApiGateway.Controllers
             }
         }
         [HttpPut("change-password")]
-        public async Task<ActionResult<UserAuthApiResponse<object>>> ChangeUserName([FromBody] ChangePasswordDto changePasswordDto)
+        public async Task<ActionResult<UserAuthApiResponse<object>>> ChangePassword([FromBody] ChangePasswordDto changePasswordDto)
         {
             var validationResult = await _changePasswordDtoValidator.ValidateAsync(changePasswordDto);
 

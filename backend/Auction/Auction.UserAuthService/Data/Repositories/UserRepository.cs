@@ -139,4 +139,5 @@ namespace Auction.UserAuthService.Data.Repositories
             return user;
         }
     }
+
 }

@@ -9,15 +9,9 @@ namespace Auction.UserService.Data.Contexts
     {
 
 
-        private readonly IConfiguration _configuration;
-        public AuctionDbContext(IConfiguration configuration)
+        public AuctionDbContext(DbContextOptions<AuctionDbContext> options)
+           : base(options)
         {
-            _configuration = configuration;
-        }
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseNpgsql(_configuration.GetConnectionString(nameof(AuctionDbContext)));
-
         }
 
         public DbSet<AuctionDetailsEntity> AuctionsDetails { get; set; }

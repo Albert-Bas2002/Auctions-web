@@ -6,6 +6,7 @@ using Auction.AuctionService.Data.Repositories;
 using Auction.AuctionService.Extensions;
 using Auction.UserService.Data.Contexts;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.FileProviders;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -26,7 +27,8 @@ builder.Services.AddScoped<IBidService, BidService>();
 builder.Services.AddScoped<IUserCategoryService, UserCategoryService>();
 builder.Services.AddHostedService<AuctionBackgroundService>();
 
-builder.Services.AddDbContext<AuctionDbContext>();
+builder.Services.AddDbContext<AuctionDbContext>(options =>
+    options.UseNpgsql(builder.Configuration.GetConnectionString("AuctionDbContext")));
 builder.Services.Configure<ApiBehaviorOptions>(options =>
 {
     options.SuppressModelStateInvalidFilter = true;

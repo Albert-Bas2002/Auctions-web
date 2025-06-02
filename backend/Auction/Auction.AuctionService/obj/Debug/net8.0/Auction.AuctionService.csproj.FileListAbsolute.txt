@@ -137,3 +137,5 @@ D:\Auction\backend\Auction\Auction.AuctionService\obj\Debug\net8.0\Auction.Aucti
 D:\Auction\backend\Auction\Auction.AuctionService\obj\Debug\net8.0\ref\Auction.AuctionService.dll
 D:\Auction\backend\Auction\Auction.AuctionService\bin\Debug\net8.0\FluentValidation.dll
 D:\Auction\backend\Auction\Auction.AuctionService\bin\Debug\net8.0\CSharpFunctionalExtensions.dll
+D:\Auction\backend\Auction\Auction.AuctionService\obj\Debug\net8.0\Auction.AuctionService.sourcelink.json
+D:\Auction\backend\Auction\Auction.AuctionService\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

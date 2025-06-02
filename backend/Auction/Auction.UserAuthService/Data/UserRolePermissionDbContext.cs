@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Auction.UserAuthService.Data.Configurations;
-using Microsoft.Extensions.Configuration;
 using Auction.UserAuthService.Data.Entities;
 using Auction.UserAuthService.Data.Entities.AuthEntities;
 
@@ -8,17 +7,9 @@ namespace Auction.UserAuthService.Data
 {
     public class UserRolePermissionDbContext : DbContext
     {
-
-
-        private readonly IConfiguration _configuration;
-        public UserRolePermissionDbContext(IConfiguration configuration)
+        public UserRolePermissionDbContext(DbContextOptions<UserRolePermissionDbContext> options)
+            : base(options)
         {
-            _configuration = configuration;
-        }
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseNpgsql(_configuration.GetConnectionString(nameof(UserRolePermissionDbContext)));
-
         }
 
         public DbSet<UserEntity> Users { get; set; }
@@ -26,9 +17,6 @@ namespace Auction.UserAuthService.Data
         public DbSet<PermissionEntity> Permissions { get; set; }
         public DbSet<RolePermissionEntity> RolePermission { get; set; }
         public DbSet<UserRoleEntity> UserRole { get; set; }
-
-
-
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -40,8 +28,5 @@ namespace Auction.UserAuthService.Data
 
             base.OnModelCreating(modelBuilder);
         }
-
     }
-
 }
-

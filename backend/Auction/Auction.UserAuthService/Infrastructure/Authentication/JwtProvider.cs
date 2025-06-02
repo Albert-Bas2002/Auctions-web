@@ -18,7 +18,7 @@ namespace Auction.ApiGateway.Infrastructure.Authentication
         {
             _options = options.Value;
         }
-
+       
 
         public string GenerateToken(User user, List<string> permissions)
         {

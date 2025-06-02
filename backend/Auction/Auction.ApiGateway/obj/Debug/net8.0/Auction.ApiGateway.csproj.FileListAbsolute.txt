@@ -44,3 +44,4 @@ D:\Auction\backend\Auction\Auction.ApiGateway\obj\Debug\net8.0\refint\Auction.Ap
 D:\Auction\backend\Auction\Auction.ApiGateway\obj\Debug\net8.0\Auction.ApiGateway.pdb
 D:\Auction\backend\Auction\Auction.ApiGateway\obj\Debug\net8.0\Auction.ApiGateway.genruntimeconfig.cache
 D:\Auction\backend\Auction\Auction.ApiGateway\obj\Debug\net8.0\ref\Auction.ApiGateway.dll
+D:\Auction\backend\Auction\Auction.ApiGateway\obj\Debug\net8.0\Auction.ApiGateway.sourcelink.json

@@ -9,17 +9,11 @@ namespace Auction.HubService.Data
     public class AuctionChatDbContext : DbContext
     {
 
-        private readonly IConfiguration _configuration;
-        public AuctionChatDbContext(IConfiguration configuration)
+        public AuctionChatDbContext(DbContextOptions<AuctionChatDbContext> options)
+             : base(options)
         {
-            _configuration = configuration;
         }
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseNpgsql(_configuration.GetConnectionString(nameof(AuctionChatDbContext)));
 
-        }
-        
 
         public DbSet<AuctionChatMessageEntity> AuctionChatMessages { get; set; }
 
