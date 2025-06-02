@@ -149,4 +149,9 @@ D:\Auction\backend\Auction\Auction.UserAuthService\obj\Debug\net8.0\Auction.User
 D:\Auction\backend\Auction\Auction.UserAuthService\obj\Debug\net8.0\Auction.UserAuthService.genruntimeconfig.cache
 D:\Auction\backend\Auction\Auction.UserAuthService\obj\Debug\net8.0\ref\Auction.UserAuthService.dll
 D:\Auction\backend\Auction\Auction.UserAuthService\obj\Debug\net8.0\Auction.UserAuthService.sourcelink.json
-D:\Auction\backend\Auction\Auction.UserAuthService\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+D:\Auction\backend\Auction\Auction.UserAuthService\bin\Debug\net8.0\DnsClient.dll
+D:\Auction\backend\Auction\Auction.UserAuthService\bin\Debug\net8.0\MongoDB.Bson.dll
+D:\Auction\backend\Auction\Auction.UserAuthService\bin\Debug\net8.0\MongoDB.Driver.dll
+D:\Auction\backend\Auction\Auction.UserAuthService\bin\Debug\net8.0\SharpCompress.dll
+D:\Auction\backend\Auction\Auction.UserAuthService\bin\Debug\net8.0\Snappier.dll
+D:\Auction\backend\Auction\Auction.UserAuthService\bin\Debug\net8.0\ZstdSharp.dll

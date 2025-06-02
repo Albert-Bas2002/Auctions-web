@@ -2,17 +2,17 @@ using System;
 using System.Threading.Tasks;
 using Auction.UserAuthService.Core.Models;
 using Auction.UserAuthService.Data;
-using Auction.UserAuthService.Data.Entities.AuthEntities;
-using Auction.UserAuthService.Data.Entities;
+using Auction.UserAuthService.Data.SqlEntities.AuthEntities;
+using Auction.UserAuthService.Data.SqlEntities;
 using Auction.UserAuthService.Data.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Xunit;
 
-public class UserRepositoryTests
+public class SqlUserRepositoryTests
 {
     private DbContextOptions<UserRolePermissionDbContext> _dbContextOptions;
 
-    public UserRepositoryTests()
+    public SqlUserRepositoryTests()
     {
         _dbContextOptions = new DbContextOptionsBuilder<UserRolePermissionDbContext>()
             .UseInMemoryDatabase(databaseName: Guid.NewGuid().ToString())
@@ -23,7 +23,7 @@ public class UserRepositoryTests
     public async Task Add_And_GetByEmail_WorksCorrectly()
     {
         var context = new UserRolePermissionDbContext(_dbContextOptions);
-        var repository = new UserRepository(context);
+        var repository = new SqlUserRepository(context);
 
         var user = User.Create(Guid.NewGuid(), "testuser", "hashedpass", "test@example.com", "123456");
 
@@ -40,7 +40,7 @@ public class UserRepositoryTests
     public async Task UserExistsByEmail_ReturnsTrue_WhenUserExists()
     {
         var context = new UserRolePermissionDbContext(_dbContextOptions);
-        var repository = new UserRepository(context);
+        var repository = new SqlUserRepository(context);
 
         var user = User.Create(Guid.NewGuid(), "user2", "pass", "exists@example.com", "contact");
         await repository.Add(user);
@@ -54,7 +54,7 @@ public class UserRepositoryTests
     public async Task GetByUserId_ReturnsUser_WhenExists()
     {
         var context = new UserRolePermissionDbContext(_dbContextOptions);
-        var repository = new UserRepository(context);
+        var repository = new SqlUserRepository(context);
 
         var user = User.Create(Guid.NewGuid(), "byId", "pass", "byid@example.com", "cont");
         await repository.Add(user);
@@ -68,7 +68,7 @@ public class UserRepositoryTests
     public async Task Add_ThrowsException_WhenUserWithSameEmailExists()
     {
         var context = new UserRolePermissionDbContext(_dbContextOptions);
-        var repository = new UserRepository(context);
+        var repository = new SqlUserRepository(context);
 
         var user1 = User.Create(Guid.NewGuid(), "user1", "hash", "duplicate@example.com", "contact");
         var user2 = User.Create(Guid.NewGuid(), "user2", "hash", "duplicate@example.com", "contact");
@@ -85,7 +85,7 @@ public class UserRepositoryTests
     public async Task UserExistsByEmail_ThrowsArgumentException_WhenEmailIsInvalid(string invalidEmail)
     {
         var context = new UserRolePermissionDbContext(_dbContextOptions);
-        var repository = new UserRepository(context);
+        var repository = new SqlUserRepository(context);
 
         await Assert.ThrowsAsync<ArgumentException>(() => repository.UserExistsByEmail(invalidEmail));
     }
@@ -94,7 +94,7 @@ public class UserRepositoryTests
     public async Task GetByEmail_ReturnsNull_WhenUserNotFound()
     {
         var context = new UserRolePermissionDbContext(_dbContextOptions);
-        var repository = new UserRepository(context);
+        var repository = new SqlUserRepository(context);
 
         var result = await repository.GetByEmail("notfound@example.com");
 
@@ -105,7 +105,7 @@ public class UserRepositoryTests
     public async Task Update_ChangesUserFields()
     {
         var context = new UserRolePermissionDbContext(_dbContextOptions);
-        var repository = new UserRepository(context);
+        var repository = new SqlUserRepository(context);
 
         var user = User.Create(Guid.NewGuid(), "original", "pass", "original@example.com", "contact");
         await repository.Add(user);
@@ -125,7 +125,7 @@ public class UserRepositoryTests
     public async Task GetUsersPermissions_ReturnsEmptyList_WhenUserNotFound()
     {
         var context = new UserRolePermissionDbContext(_dbContextOptions);
-        var repository = new UserRepository(context);
+        var repository = new SqlUserRepository(context);
 
         var result = await repository.GetUsersPermissions(Guid.NewGuid());
 
@@ -176,7 +176,7 @@ public class UserRepositoryTests
 
         await context.SaveChangesAsync();
 
-        var repository = new UserRepository(context);
+        var repository = new SqlUserRepository(context);
         var permissions = await repository.GetUsersPermissions(userId);
 
         Assert.Contains("User-Permission", permissions);

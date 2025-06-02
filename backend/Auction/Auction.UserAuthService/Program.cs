@@ -23,6 +23,8 @@ builder.Services.Configure<JwtOptions>(builder.Configuration.GetSection(nameof(J
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddDbContext<UserRolePermissionDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("UserRolePermissionDbContext")));
 
 builder.Services.AddDbContext<UserRolePermissionDbContext>(options =>

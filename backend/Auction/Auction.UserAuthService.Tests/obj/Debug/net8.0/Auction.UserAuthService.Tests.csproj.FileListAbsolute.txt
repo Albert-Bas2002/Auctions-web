@@ -142,3 +142,10 @@ D:\Auction\backend\Auction\Auction.UserAuthService.Tests\obj\Debug\net8.0\Auctio
 D:\Auction\backend\Auction\Auction.UserAuthService.Tests\obj\Debug\net8.0\Auction.UserAuthService.Tests.genruntimeconfig.cache
 D:\Auction\backend\Auction\Auction.UserAuthService.Tests\obj\Debug\net8.0\ref\Auction.UserAuthService.Tests.dll
 D:\Auction\backend\Auction\Auction.UserAuthService.Tests\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.InMemory.dll
+D:\Auction\backend\Auction\Auction.UserAuthService.Tests\bin\Debug\net8.0\DnsClient.dll
+D:\Auction\backend\Auction\Auction.UserAuthService.Tests\bin\Debug\net8.0\MongoDB.Bson.dll
+D:\Auction\backend\Auction\Auction.UserAuthService.Tests\bin\Debug\net8.0\MongoDB.Driver.dll
+D:\Auction\backend\Auction\Auction.UserAuthService.Tests\bin\Debug\net8.0\SharpCompress.dll
+D:\Auction\backend\Auction\Auction.UserAuthService.Tests\bin\Debug\net8.0\Snappier.dll
+D:\Auction\backend\Auction\Auction.UserAuthService.Tests\bin\Debug\net8.0\ZstdSharp.dll
+D:\Auction\backend\Auction\Auction.UserAuthService.Tests\bin\Debug\net8.0\Mongo2Go.dll
