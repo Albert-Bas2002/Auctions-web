@@ -1,5 +1,5 @@
 ﻿
-namespace Auction.UserAuthService.Data.Entities.AuthEntities
+namespace Auction.UserAuthService.Data.SqlEntities.AuthEntities
 {
     public class PermissionEntity
     {

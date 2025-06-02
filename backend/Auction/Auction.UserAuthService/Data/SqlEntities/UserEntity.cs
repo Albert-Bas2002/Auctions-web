@@ -1,6 +1,6 @@
-﻿using Auction.UserAuthService.Data.Entities.AuthEntities;
+﻿using Auction.UserAuthService.Data.SqlEntities.AuthEntities;
 
-namespace Auction.UserAuthService.Data.Entities
+namespace Auction.UserAuthService.Data.SqlEntities
 {
     public class UserEntity
     {

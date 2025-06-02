@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Auction.UserAuthService.Data.Configurations;
-using Auction.UserAuthService.Data.Entities;
-using Auction.UserAuthService.Data.Entities.AuthEntities;
+using Auction.UserAuthService.Data.SqlEntities;
+using Auction.UserAuthService.Data.SqlEntities.AuthEntities;
 
 namespace Auction.UserAuthService.Data
 {
