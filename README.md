@@ -37,7 +37,7 @@ The Auction Platform is a microservice‑based web application that enables user
 
 * **Bid Hub**: one logical hub per auction; clients receive the live bid stream.
 * **Comment Hub**: multiplexed channel for real‑time comments.
-* 
+
 ## Business Logic & Rules
 
 1. **Auction creation** requires a unique title, description, end timestamps, and an optional reserve price. *After creation, title,reserve and description cannot be modified.*
@@ -58,9 +58,9 @@ The Auction Platform is a microservice‑based web application that enables user
 Use this after creating Db Containers (by docker-compose):
 dump.sql in the corresponding folder contains ready data for tables and database elements
 
-cat dump.sql | docker exec -i UserRolePermissionContainer psql -U postgres -d UserRolePermissionDb
-cat dump.sql | docker exec -i AuctionContainer psql -U postgres -d AuctionDb
-cat dump.sql | docker exec -i AuctionChatContainer psql -U postgres -d AuctionChatDb
+* cat dump.sql | docker exec -i UserRolePermissionContainer psql -U postgres -d UserRolePermissionDb
+* cat dump.sql | docker exec -i AuctionContainer psql -U postgres -d AuctionDb
+* cat dump.sql | docker exec -i AuctionChatContainer psql -U postgres -d AuctionChatDb
 
 
 
