@@ -1,0 +1,45 @@
+# ==============================
+# ASP.NET Core / .NET Core
+# ==============================
+
+bin/
+obj/
+*.user
+*.vs/
+.vscode/
+*.dbmdl
+*.log
+*.pdb
+*.cache
+*.DS_Store
+*.suo
+*.userprefs
+*.ide/
+*.dotCover
+*.resharper
+TestResults/
+*.ncrunch*
+*.xproj
+*.vspscc
+*.vssscc
+*.sln.docstates
+.vs/
+wwwroot/lib/    
+
+node_modules/
+.next/
+out/
+.env
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+
+.idea/
+*.log
+*.tmp
+*.swp
+*.lock
+.DS_Store
+
+

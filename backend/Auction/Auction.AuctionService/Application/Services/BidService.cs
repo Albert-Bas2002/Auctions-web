@@ -1,4 +1,5 @@
-﻿using Auction.AuctionService.Core.Abstractions;
+﻿using System.Data;
+using Auction.AuctionService.Core.Abstractions;
 using Auction.AuctionService.Core.Models;
 using CSharpFunctionalExtensions;
 
@@ -45,35 +46,37 @@ namespace Auction.AuctionService.Application.Services
         }
         public async Task<Result> Create(Guid auctionId, Guid userId, int bidValue)
         {
+            using var transaction = await _bidRepository.BeginTransactionAsync(IsolationLevel.Serializable);
+
             var auctionMaxBid = await _bidRepository.GetMaxByAuctionId(auctionId);
             var auctionDetails = await _auctionDetailsRepository.GetByAuctionId(auctionId);
+
             if (!auctionDetails.IsActive)
-            {
                 throw new InvalidOperationException("Auction is not Active");
-            }
-            var isBidderCreatodOfAuction = auctionDetails.AuctionCreatorId == userId;
-            if (isBidderCreatodOfAuction)
-            {
+
+            if (auctionDetails.AuctionCreatorId == userId)
                 throw new InvalidOperationException("The auction creator is not allowed to place a bid on their own auction.");
-            }
+
             if (bidValue <= 0)
-            {
                 return Result.Failure("Bid value must be greater than zero.");
-            }
 
             if (auctionMaxBid == null || bidValue > auctionMaxBid.GetValue())
             {
                 var newBid = Bid.Create(Guid.NewGuid(), userId, auctionId, bidValue, DateTime.UtcNow);
                 await _bidRepository.Add(newBid);
                 await _bidRepository.DeleteForUserExceptMaxBid(auctionId, userId);
+
+                await _bidRepository.CommitTransactionAsync();
+
                 return Result.Success();
             }
             else
             {
                 return Result.Failure("New bid must be greater than the previous bid.");
             }
-
         }
+
+
 
         public async Task Delete(Guid auctionId, Guid userId)
         {

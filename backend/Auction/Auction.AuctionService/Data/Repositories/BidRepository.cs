@@ -1,15 +1,32 @@
-﻿using Auction.AuctionService.Core.Abstractions;
+﻿using System.Data;
+using Auction.AuctionService.Core.Abstractions;
 using Auction.AuctionService.Core.Models;
 using Auction.AuctionService.Data.Entities;
 
 using Auction.UserService.Data.Contexts;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage;
 
 namespace Auction.AuctionService.Data.Repositories
 {
     public class BidRepository : IBidRepository
     {
         private readonly AuctionDbContext _context;
+        public async Task<IDbContextTransaction> BeginTransactionAsync(IsolationLevel isolationLevel = IsolationLevel.ReadCommitted)
+        {
+            return await _context.Database.BeginTransactionAsync(isolationLevel);
+        }
+
+        public async Task CommitTransactionAsync()
+        {
+            await _context.Database.CommitTransactionAsync();
+        }
+
+        public async Task RollbackTransactionAsync()
+        {
+            await _context.Database.RollbackTransactionAsync();
+        }
+
 
         public BidRepository(AuctionDbContext context)
         {

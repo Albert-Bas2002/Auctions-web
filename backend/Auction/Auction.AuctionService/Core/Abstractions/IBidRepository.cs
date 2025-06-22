@@ -1,4 +1,6 @@
-﻿using Auction.AuctionService.Core.Models;
+﻿using System.Data;
+using Auction.AuctionService.Core.Models;
+using Microsoft.EntityFrameworkCore.Storage;
 
 namespace Auction.AuctionService.Core.Abstractions
 {
@@ -14,5 +16,9 @@ namespace Auction.AuctionService.Core.Abstractions
         Task<Bid?> GetMaxByAuctionId(Guid auctionId);
         Task<List<Bid>> GetMaxByAuctionIds(List<Guid> auctionIds);
         Task<bool> UserHasBidOnAuction(Guid userId, Guid auctionId);
+        Task<IDbContextTransaction> BeginTransactionAsync(IsolationLevel isolationLevel);      
+        Task CommitTransactionAsync();
+        Task RollbackTransactionAsync();
+
     }
 }
